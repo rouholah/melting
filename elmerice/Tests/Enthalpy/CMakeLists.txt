@@ -1,0 +1,9 @@
+INCLUDE(${CMAKE_CURRENT_SOURCE_DIR}/../test_macros.cmake)
+
+CONFIGURE_FILE(enthalpy.sif enthalpy.sif COPYONLY)
+
+FILE(COPY ELMERSOLVER_STARTINFO WithOutCavity DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/")
+
+ADD_ELMERICE_TEST(Enthalpy)
+ADD_ELMERICE_LABEL(Enthalpy elmerice-long)
+ADD_ELMERICE_LABEL(Enthalpy slow)
